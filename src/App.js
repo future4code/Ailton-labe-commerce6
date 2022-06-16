@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Filtro } from './components/Mayara/filtro'
-import Header from './components/Gabriel/Header/Header'
+import { Filtro } from './components/Filtro/filtro'
+import Header from './components/Header/Header'
 import { ContainerPai } from './styled'
 import styled from 'styled-components'
-import Footer from './components/Gabriel/Footer/Footer'
-import MainContainer from './components/Gabriel/MainContainer/MainContainer'
+import Footer from './components/Footer/Footer'
+import MainContainer from './components/MainContainer/MainContainer'
 
 
 

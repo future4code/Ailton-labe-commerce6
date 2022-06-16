@@ -1,5 +1,5 @@
 import React from 'react'
-import { Filtro } from '../../Mayara/filtro'
+import { Filtro } from '../Filtro/filtro'
 
 export default function SectionLateral(props) {
   return (

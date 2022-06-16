@@ -1,9 +1,9 @@
 import React from 'react'
-import { ContainerMain } from '../../../styled'
+import { ContainerMain } from '../../styled'
 import SectionLateral from './SectionLateral'
 import Card from '../Cards/Card'
-import { CardDiv } from '../../../styled'
-import { SecaoLateral } from '../../../styled'
+import { CardDiv } from '../../styled'
+import { SecaoLateral } from '../../styled'
 
 export default function MainContainer(props) {
     return (
