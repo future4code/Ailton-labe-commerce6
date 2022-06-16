@@ -5,6 +5,7 @@ const Button = styled.button `
 background-color: greenyellow;
 color: black;
 padding: 10px;
+width: 150px;
 border-radius: 5px;
 `
 const Input = styled.input `
@@ -31,6 +32,7 @@ const Input = styled.input `
             <label> Valor Máximo: <p><Input type="number" max={1000} name="maximo" placeholder="digite o valor"/> </p> </label> 
            </form> 
            </p>
+     
            </div>
         </div>
       );
