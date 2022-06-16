@@ -5,6 +5,7 @@ import { ContainerPai } from './styled'
 import styled from 'styled-components'
 import Footer from './components/Footer/Footer'
 import MainContainer from './components/MainContainer/MainContainer'
+import { Carrinho } from './components/Carrinho/carrinho'
 
 
 
@@ -22,12 +23,14 @@ export default class App extends Component {
   render() {
     return (
       <ContainerPai>
+        
         <Header mostraMore1={this.mostraMore} />
       <MainContainer
       mostraMore0={this.state.more}
       />
         <Footer/>
       </ContainerPai>
+      
     )
   }
 }
