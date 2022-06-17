@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import fundo from './img/space.png'
 
 export const ContainerPai = styled.div`
 padding: 0;
@@ -6,28 +7,26 @@ margin:0;
 display: flex;
 flex-direction: column;
 min-height: 100vh;
+background-image: url(${fundo});
 `
 export const ContainerMain = styled.div`
 display: flex;
 border: 1px solid black;
-background-color: darkgray;
 `
 
 export const HeaderContainer = styled.header`
 height: 100px;
-border: 1px solid black;
+border: 1px solid white;
 display: flex;
 align-items: center;
 justify-content: space-between;
 padding: 0px 22px;
-background-color: dimgray;
 color: silver;
 `
 
 export const FooterContainer = styled.footer`
 height: 100px;
-border: 1px solid black;
-background-color: black;
+border: 1px solid white;
 color:silver;
 `
 
@@ -39,9 +38,9 @@ gap: 12px;
 padding: 12px;
 `
 export const SecaoLateral = styled.div`
-border: 1px solid black;
-padding: 10px;
-width: 30%;
+border: 1px solid white;
+padding: 15px ;
+min-width: 250px;
 justify-content: center;
 `
 

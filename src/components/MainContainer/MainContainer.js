@@ -1,6 +1,6 @@
 import React from 'react'
 import { ContainerMain } from '../../styled'
-import SectionLateral from './SectionLateral'
+import SectionLateral from './SectionFiltro'
 import Card from '../Cards/Card'
 import { CardDiv } from '../../styled'
 import { SecaoLateral } from '../../styled'
@@ -8,6 +8,7 @@ import { SecaoLateral } from '../../styled'
 export default function MainContainer(props) {
     return (
         <ContainerMain>
+
             {props.mostraMore0 && 
             <SecaoLateral>
                 <SectionLateral
@@ -28,6 +29,13 @@ export default function MainContainer(props) {
                 <Card />
                 <Card />
             </CardDiv>
+            {props.mostraMore0 && 
+            <SecaoLateral>
+                <SectionLateral
+                mostraProps0={props.mostraMore} />
+            </SecaoLateral>
+}
+
         </ContainerMain>
     )
 }

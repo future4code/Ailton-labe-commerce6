@@ -7,6 +7,7 @@ import { Inputo } from "../../styled";
 
 export class Filtro extends React.Component {
 
+
   // updateMinPreco = (event) => {
   //   this.setState({minPrice: event.target.value})
   // }
@@ -17,15 +18,13 @@ export class Filtro extends React.Component {
   //   this.setState({query: event.target.value})
   // }
 
-    render() {
-
-      return (
-     
-        <div>
+  render() {
+    return (
       <div>
-            <h3>Filtro</h3>
-          </div>
-          <p>
+        <div>
+          <h3>Filtro</h3>
+        </div>
+        <p>
           <form>
             <label>
               Valor Mínimo: 
@@ -34,9 +33,12 @@ export class Filtro extends React.Component {
               min={0} name="minimo" 
               placeholder="Valor Mínimo"/>
               </label>
+              Valor Mínimo:
+              <Inputo type="number" min={0} name="minimo" placeholder="Valor Mínimo" />
+            </label>
           </form>
-          </p>
-            <p>
+        </p>
+        <p>
           <form>
             <label>
              Valor Máximo: 
@@ -57,15 +59,18 @@ export class Filtro extends React.Component {
               placeholder="Pesquisa..."/>
             </label>
           </form>
-            </p> */}
-        
-  
-          <div>
-      
-            
+            </p> */}      
+          <div>              
           </div>
+              Valor Máximo:
+              <Inputo type="number" name="máximo" max={1000} placeholder="Valor Máximo" />
+            </label>
+          </form>
+        </p>
+        <div>
         </div>
-     
-      );
-    }
+      </div>
+
+    );
   }
+}
