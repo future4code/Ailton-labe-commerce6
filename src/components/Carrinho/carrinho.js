@@ -36,19 +36,21 @@ color:white;
 export const Carrinho = props => {
     return (
       <CarrinhoContainer>
-       <Cabecalho>header</Cabecalho>
+       <Cabecalho>
+        <button onClick={props.goHome}>Home</button>
+       </Cabecalho>
        <MainCarrinho>
            <TelaCarrinho>
             <div><h1>Carrinho de Compras</h1></div>
             <div>
-              <div>{props.img}</div>
-              <div>{props.item}</div>
+              {/* <div>{props.img}</div>
+              <div>{props.item}</div> */}
               <div>
                 <button>Add</button>
                 <button>Remove</button>
                 </div>
               </div>
-              <div>{props.valorTotal}</div>
+              {/* <div>{props.valorTotal}</div> */}
               <div></div>
            
            </TelaCarrinho>
