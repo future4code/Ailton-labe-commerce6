@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Filtro } from './components/Filtro/filtro'
+// import { Filtro } from './components/Filtro/filtro'
 import Header from './components/Header/Header'
 import { ContainerPai } from './styled'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import Footer from './components/Footer/Footer'
 import MainContainer from './components/MainContainer/MainContainer'
-import { Carrinho } from './components/Carrinho/carrinho'
+// import { Carrinho } from './components/Carrinho/carrinho'
 
 
 
