@@ -42,6 +42,7 @@ border: 1px solid white;
 padding: 15px ;
 min-width: 250px;
 justify-content: center;
+color: white;
 `
 
 export const Inputo = styled.input`
