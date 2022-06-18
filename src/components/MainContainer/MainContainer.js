@@ -35,6 +35,9 @@ export default function MainContainer(props) {
                 <SectionCarrinho
                 mostraProps0={props.mostraCart} 
                 adicionaCompra2={props.adicionaCompra1}
+                somaCompra2 ={props.somaCompra1}
+                aumentarCarrinho2={props.aumentarCarrinho1}
+                removerCarrinho2={props.removerCarrinho1}
                 // cartItems={cartItems}erro chato pacarai
                 />
             </SecaoLateral>
