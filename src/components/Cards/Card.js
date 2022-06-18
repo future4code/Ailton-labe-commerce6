@@ -41,19 +41,28 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 `
+const Butone = styled.button`
+margin: 10px;
+`
+
+// const clicado = () => {
+//   console.log('botão clicado')
+//  }
 
 
-
-export default function Card() {
+export default function Card(props) {
+  const {cards} = props;
   return (
     <CardStyle>
       <DivImagem>
-      <Imagem src='https://cdn.discordapp.com/attachments/973359834810441804/986713538187894814/hen-142.jpg' />
+      <Imagem src={cards.image} 
+      alt={cards.name}
+      />
       </DivImagem>
        <DivTexto>
-       <p>Meteorito</p>
-       <h4>preço</h4>
-       <button>adicionar ao carrinho</button>
+       <h3>{cards.name}</h3>
+       <div>R${cards.price}</div>
+       <Butone onClick={() => props.adicionaCart2(cards.id)}>adicionar ao carrinho</Butone>
        </DivTexto>
     </CardStyle>
   )
