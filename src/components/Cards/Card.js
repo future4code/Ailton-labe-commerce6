@@ -45,9 +45,9 @@ const Butone = styled.button`
 margin: 10px;
 `
 
-const clicado = () => {
-  console.log('botão clicado')
- }
+// const clicado = () => {
+//   console.log('botão clicado')
+//  }
 
 
 export default function Card(props) {
