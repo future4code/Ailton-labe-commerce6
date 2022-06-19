@@ -12,6 +12,7 @@ background-image: url(${fundo});
 export const ContainerMain = styled.div`
 display: flex;
 border: 1px solid black;
+min-height: 100vh;
 `
 
 export const HeaderContainer = styled.header`

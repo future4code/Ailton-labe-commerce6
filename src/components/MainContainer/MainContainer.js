@@ -10,7 +10,11 @@ import SectionCarrinho from './SectionCarrinho'
 
 export default function MainContainer(props) {
     const {products} = props;
-    // const [cartItems , setCartItems] = useState([])
+    const arrayProdutosFiltrados = props.products.filter((item)=>{
+        if(item.name.toLowerCase().includes(props.valorInputBusca.toLowerCase()) && item.price >= props.valorInputValorMin && item.price <= props.valorInputValorMax ) {
+            return item
+        }
+    })
     return (
         <ContainerMain>
 
@@ -19,12 +23,15 @@ export default function MainContainer(props) {
                 <SectionFiltro
                 mostraProps0={props.mostraMore} 
                 onChangeFiltro={props.onChangeFiltro}
+                onChangeBusca={props.onChangeBusca}
+                onChangeValorMinimo={props.onChangeValorMinimo}
+                onChangeValorMaximo={props.onChangeValorMaximo}
                 />
             </SecaoLateral>
 }
             <CardDiv>
             {
-            products.map((cards) => ( 
+            arrayProdutosFiltrados.map((cards) => ( 
                 <Card key={cards.id}
                 cards={cards}
                 adicionaCart2={props.adicionaCart1}
@@ -38,10 +45,13 @@ export default function MainContainer(props) {
                 <SectionCarrinho
                 mostraProps0={props.mostraCart} 
                 adicionaCompra2={props.adicionaCompra1}
+                adicionaCart1={props.adicionaCart1}
                 somaCompra2 ={props.somaCompra1}
                 aumentarCarrinho2={props.aumentarCarrinho1}
                 removerCarrinho2={props.removerCarrinho1}
                 products1={props.products}
+                removeItem={props.removeItem}
+                removeTudo={props.removeTudo}
                 // cartItems={cartItems}erro chato pacarai
                 />
             </SecaoLateral>

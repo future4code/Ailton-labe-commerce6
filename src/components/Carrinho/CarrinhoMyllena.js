@@ -20,11 +20,14 @@ export default function CarrinhoMyllena(props) {
           <p>{item.name}</p>
           <p>{item.price}</p>
           <div> 
-            <button onClick={()=>(props.adicionaCompra3)}>+</button>
-            <button onClick={()=>(props.removerCarrinho3)}>-</button>
+            <button onClick={()=>(props.adicionaCart1(item.id))}>+</button>
+            <button onClick={()=>(props.removeItem(item))}>-</button>
           </div>
           <div>
             {item.qty} x R${item.price.toFixed(2)}
+          </div>
+          <div>
+            <button onClick={()=>(props.removeTudo(item.id))}>Remover Tudo</button>
           </div>
         </div>
       })}
@@ -36,6 +39,7 @@ export default function CarrinhoMyllena(props) {
               </div>
               <div>
                 <strong>${soma}</strong>
+
                 </div>
       </div>
   )
