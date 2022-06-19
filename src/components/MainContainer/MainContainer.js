@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ContainerMain } from '../../styled'
-import SectionLateral from './SectionFiltro'
+import SectionFiltro from './SectionFiltro'
 import Card from '../Cards/Card'
 import { CardDiv } from '../../styled'
 import { SecaoLateral } from '../../styled'
@@ -16,21 +16,24 @@ export default function MainContainer(props) {
 
             {props.mostraMore0 && 
             <SecaoLateral>
-                <SectionLateral
-                mostraProps0={props.mostraMore} />
+                <SectionFiltro
+                mostraProps0={props.mostraMore} 
+                onChangeFiltro={props.onChangeFiltro}
+                />
             </SecaoLateral>
 }
             <CardDiv>
-            {products.map((cards) => (
+            {
+            products.map((cards) => ( 
                 <Card key={cards.id}
                 cards={cards}
                 adicionaCart2={props.adicionaCart1}
-        
+                // ordemSelect={props.ordemSelect}
                 />
             ))}
                 
             </CardDiv>
-            {props.mostraMore0 && 
+            {props.mostraCart0 && 
             <SecaoLateral>
                 <SectionCarrinho
                 mostraProps0={props.mostraCart} 
@@ -38,6 +41,7 @@ export default function MainContainer(props) {
                 somaCompra2 ={props.somaCompra1}
                 aumentarCarrinho2={props.aumentarCarrinho1}
                 removerCarrinho2={props.removerCarrinho1}
+                products1={props.products}
                 // cartItems={cartItems}erro chato pacarai
                 />
             </SecaoLateral>

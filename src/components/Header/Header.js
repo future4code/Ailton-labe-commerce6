@@ -12,7 +12,7 @@ export default function header(props) {
                 <ButaoFiltro onClick={props.mostraMore1}>Filtro</ButaoFiltro>
             </div>
             <div>
-                <ButaoParagrafo onClick={props.mostraCart}>Carrinho</ButaoParagrafo>
+                <ButaoParagrafo onClick={props.mostraCart}>Carrinho ({props.quantidadeCarrinho})</ButaoParagrafo>
             </div>
         </HeaderContainer>
     )

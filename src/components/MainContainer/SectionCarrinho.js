@@ -10,6 +10,7 @@ export default function SectionCarrinho(props) {
     somaCompra3 ={props.somaCompra2}
     aumentarCarrinho3={props.aumentarCarrinho2}
     removerCarrinho3={props.removerCarrinho2}
+    products2={props.products1}
     />
   )
 }
