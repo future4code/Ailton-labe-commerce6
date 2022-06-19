@@ -2,8 +2,14 @@ import React from 'react'
 
 
 export default function CarrinhoMyllena(props) {
-  const {cartItems} = props;
-  const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
+  // const {cartItems} = props;
+  // const itemsPrice = props.adicionaCompra3.reduce((a, c) => a + c.qty * c.price);
+  let soma = 0
+  for (const items of props.adicionaCompra3) {
+    soma = soma + (items.qty * items.price)
+  }
+  
+  console.log('console carti', props.produtos2)
   return (
     <div>
       <h2>Carrinho</h2>
@@ -14,7 +20,7 @@ export default function CarrinhoMyllena(props) {
           <p>{item.name}</p>
           <p>{item.price}</p>
           <div> 
-            <button onClick={()=>(props.aumentarCarrinho3)}>+</button>
+            <button onClick={()=>(props.adicionaCompra3)}>+</button>
             <button onClick={()=>(props.removerCarrinho3)}>-</button>
           </div>
           <div>
@@ -29,7 +35,7 @@ export default function CarrinhoMyllena(props) {
       <strong>Valor total:</strong>
               </div>
               <div>
-                <strong>${itemsPrice.toFixed(2)}</strong>
+                <strong>${soma}</strong>
                 </div>
       </div>
   )
