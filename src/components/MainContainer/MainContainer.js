@@ -5,7 +5,7 @@ import Card from '../Cards/Card'
 import { CardDiv } from '../../styled'
 import { SecaoLateral } from '../../styled'
 import SectionCarrinho from './SectionCarrinho'
-
+import {SecaoLateralCarrinho} from '../../styled'
 
 
 export default function MainContainer(props) {
@@ -41,7 +41,7 @@ export default function MainContainer(props) {
                 
             </CardDiv>
             {props.mostraCart0 && 
-            <SecaoLateral>
+            <SecaoLateralCarrinho>
                 <SectionCarrinho
                 mostraProps0={props.mostraCart} 
                 adicionaCompra2={props.adicionaCompra1}
@@ -54,7 +54,7 @@ export default function MainContainer(props) {
                 removeTudo={props.removeTudo}
                 // cartItems={cartItems}erro chato pacarai
                 />
-            </SecaoLateral>
+            </SecaoLateralCarrinho>
 }
 
         </ContainerMain>

@@ -16,9 +16,8 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-width: 320px;
-height: 420px;
-border: 1px solid black;
+width: 280px;
+height: 380px;
 border-radius: 16px;
 padding: 15px 5px;
 color:white;
@@ -41,8 +40,25 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 `
-const Butone = styled.button`
-margin: 10px;
+const Butone = styled.p`
+margin:10px;
+font-size: 15px;
+ color:white;
+font-weight: bold;
+padding: 4px 8px;
+border-radius: 12px;
+user-select: none;
+outline: none;
+background-color: slateblue;
+:hover{
+    background-color:silver ;
+    color: slateblue;
+    cursor: pointer;
+}:active {
+    background-color: aqua;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px)
+}
 `
 
 // const clicado = () => {
