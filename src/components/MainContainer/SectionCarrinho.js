@@ -8,9 +8,10 @@ export default function SectionCarrinho(props) {
     <CarrinhoMyllena mostraProps1={props.mostraCart}
     adicionaCompra3={props.adicionaCompra2}
     somaCompra3 ={props.somaCompra2}
-    aumentarCarrinho3={props.aumentarCarrinho2}
-    removerCarrinho3={props.removerCarrinho2}
     products2={props.products1}
+    adicionaCart1={props.adicionaCart1}
+    removeItem={props.removeItem}
+    removeTudo={props.removeTudo}
     />
   )
 }

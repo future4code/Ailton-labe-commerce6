@@ -6,6 +6,9 @@ export default function SectionFiltro(props) {
     <div>
         <Filtro mostraProps1={props.mostraProps}
         onChangeFiltro={props.onChangeFiltro}
+        onChangeBusca={props.onChangeBusca}
+        onChangeValorMinimo={props.onChangeValorMinimo}
+        onChangeValorMaximo={props.onChangeValorMaximo}
         />
     </div>
   )

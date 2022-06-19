@@ -6,12 +6,20 @@ export default class Filtro extends React.Component {
   render() {
     return (
       <div>
+        <div>
         <strong>Ordem</strong>
         <select onChange={this.props.onChangeFiltro}>
           <option>Crescente</option>
           <option>Decrescente</option>
         </select>
+        </div>
+        <div>
+          <Inputo onChange={this.props.onChangeBusca} placeholder="Buscar"/>
+          <Inputo onChange={this.props.onChangeValorMinimo} type='number' placeholder="Valor Mínimo" min={0}/>
+          <Inputo onChange={this.props.onChangeValorMaximo} type='number' placeholder="valor Maximo" min={0} />
+        </div>
       </div>
+    
     )
   }
 }

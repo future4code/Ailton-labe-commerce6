@@ -9,9 +9,13 @@ import data from './Data'
 export default class App extends Component {
   state = {
     more: false,
-    moreCart:false,
+    moreCart: false,
     ordemSelect: 'Crescente',
+    valorInputBusca: '',
+    valorInputValorMin: '',
+    valorInputValorMax: Infinity,
     listaCompras: [],
+    listaDeProdutos: []
   }
 
 
@@ -30,18 +34,16 @@ export default class App extends Component {
 
   adicionaCarrinho = (id) => {
     const { products } = data;
-    // console.log("botão adicionar carrinho clicado")
     let produtoAdicionado = products.filter((item) => {
-      // console.log(item)
       return id === item.id
     })
-    let verdade = false
+    let existe = false
     for (const item of this.state.listaCompras) {
       if (id === item.id) {
-        verdade = true
+        existe = true
       }
     }
-    if (verdade === false) {
+    if (existe === false) {
       produtoAdicionado[0] = { ...produtoAdicionado[0], qty: 1 }
       let listaCart = [...this.state.listaCompras, produtoAdicionado[0]]
       this.setState({ listaCompras: listaCart })
@@ -63,47 +65,93 @@ export default class App extends Component {
     }
   };
 
+  removeTudo = (id) => {
+    const recebeFiltro = this.state.listaCompras.filter((item) => {
+      return item.id !== id
+    })
+    this.setState({ listaCompras: recebeFiltro })
+  }
+
+
+  removeItem = (products) => {
+    if (products.qty > 1) {
+      const array = this.state.listaCompras.map((item) => {
+        if (item.id === products.id) {
+          return {
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            image: item.image,
+            qty: item.qty - 1
+          }
+        } else {
+          return item
+        }
+      })
+      this.setState({ listaCompras: array })
+    } else {
+      const arrayRemover = this.state.listaCompras.filter((item) => {
+        return products.id !== item.id
+      })
+      this.setState({ listaCompras: arrayRemover })
+    }
+  }
+
   onChangeFiltro = (event) => {
-    const { products } = data;
     this.setState({
       ordemSelect: event.target.value
     })
+    if (event.target.value === 'Crescente') {
+      this.setState({
+        listaDeProdutos: this.state.listaDeProdutos.sort((a, b) =>
+          a.price - b.price
+        )
+      })
 
+    }
+    if (event.target.value === 'Decrescente') {
+      this.setState({
+        listaDeProdutos: this.state.listaDeProdutos.sort((a, b) =>
+          b.price - a.price
+        )
+      })
+    }
+    console.log('alknaeofjh', this.state.listaDeProdutos)
   }
 
-  // aumentarCarrinho = (product) => {
-  //   const exist = this.state.listaCompras.find((x) => x.id === product.id);
-  //   if (exist) {
-  //     this.state.listaCompras.map((x) =>
-  //       this.setState({ listaCompras: x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x })
-  //     );
-  //   } else {
-  //     this.setState({ listaCompras: [...this.state.listaCompras, { ...product, qty: 1 }] });
-  //   }
-  // };
+  componentDidMount() {
+    const { products } = data;
+    let produto = products.filter((item) => {
+      return item
+    })
+    this.setState({ listaDeProdutos: produto })
+  }
 
-  // removerCarrinho = (product) => {
-  //   const exist = this.state.listaCompras.find((x) => x.id === product.id);
-  //   if (exist.qty === 1) {
-  //     this.setState({ listaCompras: this.state.listaCompras.filter((x) => x.id !== product.id) });
-  //   } else {
-  //     this.setState({
-  //       listaCompras:
-  //         this.state.listaCompras.map((x) =>
-  //           x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
-  //         )
-  //     });
-  //   }
-  // };
-
-
+  onChangeBusca = (event) => {
+    this.setState({
+      valorInputBusca: event.target.value
+    })
+  }
+  onChangeValorMinimo = (event) => {
+    this.setState({
+      valorInputValorMin: event.target.value
+    })
+  }
+  onChangeValorMaximo = (event) => {
+    if (event.target.value !== '') {
+      this.setState({
+        valorInputValorMax: event.target.value
+      })
+    } else {
+      this.setState({
+        valorInputValorMax: Infinity
+      })
+    }
+  }
 
   render() {
-    // const [cartItems , setCartItems] = useState([])
     const { products } = data;
     console.log(this.state.listaCompras)
-
-
 
 
     return (
@@ -116,15 +164,21 @@ export default class App extends Component {
 
         <MainContainer
           ordemSelect={this.state.ordemSelect}
-          onChangeFiltro={this.props.onChangeFiltro}
+          onChangeFiltro={this.onChangeFiltro}
+          onChangeBusca={this.onChangeBusca}
+          valorInputBusca={this.state.valorInputBusca}
+          onChangeValorMinimo={this.onChangeValorMinimo}
+          valorInputValorMin={this.state.valorInputValorMin}
+          onChangeValorMaximo={this.onChangeValorMaximo}
+          valorInputValorMax={this.state.valorInputValorMax}
           mostraMore0={this.state.more}
           mostraCart0={this.state.moreCart}
-          products={products}
+          products={this.state.listaDeProdutos}
           adicionaCart1={this.adicionaCarrinho}
           adicionaCompra1={this.state.listaCompras}
           somaCompra1={this.somaItem}
-          aumentarCarrinho1={this.aumentarCarrinho}
-          removerCarrinho1={this.removerCarrinho}
+          removeTudo={this.removeTudo}
+          removeItem={this.removeItem}
         >
         </MainContainer>
 
