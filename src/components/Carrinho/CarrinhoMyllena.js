@@ -1,5 +1,23 @@
 import React from 'react'
+import styled from 'styled-components'
 
+const ItemCarrinho = styled.div`
+display:flex;
+color: black;
+flex-direction:row;
+justify-content: space-between;
+background-color: white;
+opacity:70%;
+border-radius:16px;
+margin-bottom:10px;
+padding:16px;
+
+` 
+const CentralizarDiv = styled.div`
+display:flex;
+justify-content:center;
+align-items:center;
+`
 
 export default function CarrinhoMyllena(props) {
   // const {cartItems} = props;
@@ -16,20 +34,21 @@ export default function CarrinhoMyllena(props) {
       <div>
         {props.adicionaCompra3.length === 0 ? <div>O carrinho está vazio!</div> : <div>
       {props.adicionaCompra3.map((item) => {
-        return <div>
+        return <ItemCarrinho>
+          <CentralizarDiv>
           <p>{item.name}</p>
-          <p>{item.price}</p>
-          <div> 
+          </CentralizarDiv>
+          <CentralizarDiv> 
             <button onClick={()=>(props.adicionaCart1(item.id))}>+</button>
             <button onClick={()=>(props.removeItem(item))}>-</button>
-          </div>
-          <div>
+          </CentralizarDiv>
+          <CentralizarDiv>
             {item.qty} x R${item.price.toFixed(2)}
-          </div>
-          <div>
+          </CentralizarDiv>
+          <CentralizarDiv>
             <button onClick={()=>(props.removeTudo(item.id))}>Remover Tudo</button>
-          </div>
-        </div>
+          </CentralizarDiv>
+        </ItemCarrinho>
       })}
       </div>}
       

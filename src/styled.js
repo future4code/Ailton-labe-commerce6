@@ -45,6 +45,14 @@ min-width: 250px;
 justify-content: center;
 color: white;
 `
+export const SecaoLateralCarrinho = styled.div`
+border: 1px solid white;
+padding: 15px ;
+min-width: 500px;
+justify-content: center;
+color: white;
+`
+
 
 export const Inputo = styled.input`
 border-radius: 10px;
