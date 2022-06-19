@@ -11,13 +11,13 @@ background-image: url(${fundo});
 `
 export const ContainerMain = styled.div`
 display: flex;
-border: 1px solid black;
+/* border: 1px solid black; */
 min-height: 100vh;
 `
 
 export const HeaderContainer = styled.header`
 height: 100px;
-border: 1px solid white;
+/* border: 1px solid white; */
 display: flex;
 align-items: center;
 justify-content: space-between;
@@ -27,7 +27,7 @@ color: silver;
 
 export const FooterContainer = styled.footer`
 height: 100px;
-border: 1px solid white;
+/* border: 1px solid white; */
 color:silver;
 `
 
@@ -39,14 +39,14 @@ gap: 12px;
 padding: 12px;
 `
 export const SecaoLateral = styled.div`
-border: 1px solid white;
+/* border: 1px solid white; */
 padding: 15px ;
 min-width: 250px;
 justify-content: center;
 color: white;
 `
 export const SecaoLateralCarrinho = styled.div`
-border: 1px solid white;
+/* border: 1px solid white; */
 padding: 15px ;
 min-width: 500px;
 justify-content: center;

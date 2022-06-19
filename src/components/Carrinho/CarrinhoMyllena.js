@@ -57,7 +57,7 @@ export default function CarrinhoMyllena(props) {
       <strong>Valor total:</strong>
               </div>
               <div>
-                <strong>${soma}</strong>
+                <strong>R${soma}</strong>
 
                 </div>
       </div>
