@@ -26,7 +26,7 @@ Os botões de carrinho e filtro se escondem
 <br>Quantidade adicionada, e permite remoção dos produtos, de forma individual, ou todos de uma vez.
 
 **Tecnologias utilizadas:**
-<br>HTML, CSS, JavaScript (REACT)
+<br>> REACT : HTML, CSS, JavaScript 
 
 **Desenvolvedores Envolvidos:**
 <br>João Gabriel Sales
