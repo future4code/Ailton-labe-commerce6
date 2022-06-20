@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Fundo from '../../img/space.png'
 
 const ItemCarrinho = styled.div`
 display:flex;
@@ -18,6 +19,51 @@ display:flex;
 justify-content:center;
 align-items:center;
 `
+const ValorTotal = styled.div`
+margin-top: 25px;
+display: flex;
+flex-direction:row;
+align-content: flex-start;
+justify-content:center;
+font-size: 23px;
+
+`
+const Espacinho = styled.div`
+margin-left: 15px;
+`
+
+const Titulo = styled.div`
+display: flex;
+justify-content:center;
+`
+const BotaoAdicionar =styled.button`
+background-color: #10b6d3;
+border:none;
+border-radius:2px;
+padding:5px 8px;
+font-size:18px;
+color:white;
+`
+const BotaoRemover = styled.button`
+background-color:#5016c6;
+border:none;
+border-radius:2px;
+padding:5px 10px;
+font-size:18px;
+margin-left:2px;
+color:white;
+`
+const RemoverTudo = styled.button`
+background: url(${Fundo});
+color:white;
+border:none;
+border-radius:6px;
+padding:8px;
+`
+const EstilizaStrong = styled.strong`
+color: slateblue;
+`
+
 
 export default function CarrinhoMyllena(props) {
   // const {cartItems} = props;
@@ -30,36 +76,39 @@ export default function CarrinhoMyllena(props) {
   console.log('console carti', props.produtos2)
   return (
     <div>
-      <h2>Carrinho</h2>
+      <Titulo>
+      <h1>Carrinho</h1>
+      </Titulo>
       <div>
-        {props.adicionaCompra3.length === 0 ? <div>O carrinho está vazio!</div> : <div>
+        {props.adicionaCompra3.length === 0 ? <Titulo>O carrinho está vazio!</Titulo> : <div>
       {props.adicionaCompra3.map((item) => {
         return <ItemCarrinho>
           <CentralizarDiv>
-          <p>{item.name}</p>
+          <EstilizaStrong><p>{item.name}</p></EstilizaStrong>
           </CentralizarDiv>
           <CentralizarDiv> 
-            <button onClick={()=>(props.adicionaCart1(item.id))}>+</button>
-            <button onClick={()=>(props.removeItem(item))}>-</button>
+            <BotaoAdicionar onClick={()=>(props.adicionaCart1(item.id))}>+</BotaoAdicionar>
+            <BotaoRemover onClick={()=>(props.removeItem(item))}>-</BotaoRemover>
           </CentralizarDiv>
           <CentralizarDiv>
-            {item.qty} x R${item.price.toFixed(2)}
+            <EstilizaStrong>{item.qty} x R${item.price.toFixed(2)}</EstilizaStrong>
           </CentralizarDiv>
           <CentralizarDiv>
-            <button onClick={()=>(props.removeTudo(item.id))}>Remover Tudo</button>
+            <RemoverTudo onClick={()=>(props.removeTudo(item.id))}>Remover Tudo</RemoverTudo>
           </CentralizarDiv>
         </ItemCarrinho>
       })}
       </div>}
       
       </div>
+      <ValorTotal>
       <div>
       <strong>Valor total:</strong>
               </div>
-              <div>
+              <Espacinho>
                 <strong>R${soma}</strong>
-
-                </div>
+                </Espacinho>
+                </ValorTotal>
       </div>
   )
 }

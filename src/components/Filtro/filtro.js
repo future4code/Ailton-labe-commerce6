@@ -1,22 +1,40 @@
 import React from "react";
+import styled from "styled-components";
 import { Inputo } from "../../styled";
+
+const EstilizaTudo = styled.div`
+display:flex;
+flex-direction:column;
+justify-content: center;
+align-items: center;
+
+`
+const MudaSelect = styled.select`
+background-color:#c124d3;
+color:white;
+box-shadow:2px 3px aqua;
+border-radius:5px;
+padding:5px;
+margin-bottom:10px;
+font-size:14px;
+`
 
 
 export default class Filtro extends React.Component {
   render() {
     return (
       <div>
-        <div>
-        <strong>Ordem</strong>
-        <select onChange={this.props.onChangeFiltro}>
+        <EstilizaTudo>
+        <h3>Ordem</h3>
+        <MudaSelect onChange={this.props.onChangeFiltro}>
           <option>Crescente</option>
           <option>Decrescente</option>
-        </select>
-        </div>
+        </MudaSelect>
+        </EstilizaTudo>
         <div>
           <Inputo onChange={this.props.onChangeBusca} placeholder="Buscar"/>
           <Inputo onChange={this.props.onChangeValorMinimo} type='number' placeholder="Valor Mínimo" min={0}/>
-          <Inputo onChange={this.props.onChangeValorMaximo} type='number' placeholder="valor Maximo" min={0} />
+          <Inputo onChange={this.props.onChangeValorMaximo} type='number' placeholder="Valor Maximo" min={0} />
         </div>
       </div>
     
