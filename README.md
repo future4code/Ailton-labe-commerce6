@@ -30,6 +30,6 @@ Os botões de carrinho e filtro se escondem
 <br>> REACT : HTML, CSS, JavaScript 
 
 **Desenvolvedores Envolvidos:**
-<br>João Gabriel Sales
+<br>Gabriel Sales
 <br>Mayara Costa 
 <br>Myllena Moreira
