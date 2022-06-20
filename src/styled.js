@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 import fundo from './img/space.png'
 
 export const ContainerPai = styled.div`
@@ -26,9 +26,13 @@ color: silver;
 `
 
 export const FooterContainer = styled.footer`
-height: 100px;
+height: 200px;
 /* border: 1px solid white; */
 color:silver;
+display:flex;
+flex-direction:row;
+justify-content:space-evenly;
+margin-top:70px;
 `
 
 export const CardDiv = styled.div`
@@ -41,7 +45,7 @@ padding: 12px;
 export const SecaoLateral = styled.div`
 /* border: 1px solid white; */
 padding: 15px ;
-min-width: 250px;
+max-width: 250px;
 justify-content: center;
 color: white;
 `
@@ -58,6 +62,15 @@ export const Inputo = styled.input`
 border-radius: 10px;
 font-size: 18px;
 width: 100%;
+margin-bottom: 10px;
+margin-top:10px;
+background-color:slateblue;
+color:white;
+box-shadow:2px 3px aqua;
+::placeholder{
+    color:white;
+    padding:10px;
+} 
 `
 
 export const ButaoParagrafo =styled.p`
