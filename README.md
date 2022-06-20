@@ -5,7 +5,7 @@
 **Projeto de criado com base nas solicitações do nosso querido Astrobot. Precisávamos criar um site de ecommerce temático, sobre o espaço. Com isso em mente trabalhamos na linha de artefatos vindos diretamente do nosso espaço! Como meteoritos e poeira lunar.**
 
 Surge:
-rustic-paper.surge.sh
+https://rustic-paper.surge.sh/
 
 **O site possui os seguintes conteudos:**
 
